@@ -1,7 +1,7 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import {
   BsSearch,
-  BsCloudSunFill,
   BsFillCloudsFill,
   BsSunFill,
   BsFillCloudFogFill
@@ -44,20 +44,21 @@ function App() {
   };
 
   useEffect(() => {
-    getWeatherInfo();
+
+    getWeatherInfo();// eslint-disable-next-line
   }, []);
 
   const weather = () => {
   
-  if(weatherData?.condition == 'Clouds') {
+  if(weatherData?.condition === 'Clouds') {
      return <BsFillCloudsFill size={120} />
-  } else if (weatherData?.condition == 'Haze') {
+  } else if (weatherData?.condition === 'Haze') {
     return <BsFillCloudFogFill size={120} />
-  } else if (weatherData?.condition == 'Clear') {
+  } else if (weatherData?.condition === 'Clear') {
     return <BsSunFill size={120} />
-  } else if (weatherData?.condition == 'Rain') {
+  } else if (weatherData?.condition === 'Rain') {
     return <FaCloudShowersHeavy size={120} />
-  } else if (weatherData?.condition == 'Smoke') {
+  } else if (weatherData?.condition === 'Smoke') {
     return <WiSmoke size={120} />
   } else {
     return <BsSunFill size={120} />
